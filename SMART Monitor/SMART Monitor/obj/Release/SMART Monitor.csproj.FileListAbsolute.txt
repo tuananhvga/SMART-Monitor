@@ -1,0 +1,15 @@
+D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor\bin\Release\SMART Monitor.exe
+D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor\bin\Release\SMART Monitor.exe.config
+D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor\obj\Release\ResolveAssemblyReference.cache
+D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor\obj\Release\SMART_Monitor.SMART_Monitor.resources
+D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor\obj\Release\SMART_Monitor.Properties.Resources.resources
+D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor\obj\Release\SMART Monitor.csproj.GenerateResource.Cache
+D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor\obj\Release\SMART Monitor.exe
+D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor\obj\Release\SMART Monitor.pdb
+D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor\bin\Release\SMART Monitor.pdb
+D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor\bin\Release\MongoDB.Bson.dll
+D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor\bin\Release\MongoDB.Driver.dll
+D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor\bin\Release\MongoDB.Driver.pdb
+D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor\bin\Release\MongoDB.Driver.xml
+D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor\bin\Release\MongoDB.Bson.pdb
+D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor\bin\Release\MongoDB.Bson.xml

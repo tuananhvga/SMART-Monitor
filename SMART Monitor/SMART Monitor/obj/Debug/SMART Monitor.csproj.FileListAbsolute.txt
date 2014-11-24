@@ -1,0 +1,8 @@
+D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor\bin\Debug\SMART Monitor.exe
+D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor\bin\Debug\SMART Monitor.pdb
+D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor\obj\Debug\ResolveAssemblyReference.cache
+D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor\obj\Debug\SMART_Monitor.Properties.Resources.resources
+D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor\obj\Debug\SMART Monitor.csproj.GenerateResource.Cache
+D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor\obj\Debug\SMART Monitor.exe
+D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor\obj\Debug\SMART Monitor.pdb
+D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor\obj\Debug\SMART_Monitor.SMART_Monitor.resources

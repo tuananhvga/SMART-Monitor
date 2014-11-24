@@ -33,6 +33,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Build.Engine" />
+    <Reference Include="MongoDB.Bson, Version=1.10.0.277, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\MongoDB\CSharpDriver 1.10-rc0\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=1.10.0.277, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\MongoDB\CSharpDriver 1.10-rc0\MongoDB.Driver.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>

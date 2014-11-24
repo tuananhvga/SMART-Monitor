@@ -8,6 +8,11 @@ using System.Linq;
 using System.Threading;
 using System.Text;
 using System.Windows.Forms;
+using MongoDB.Driver;
+using MongoDB.Driver.Builders;
+using MongoDB.Driver.GridFS;
+using MongoDB.Driver.Linq;
+using MongoDB.Bson;
 
 namespace SMART_Monitor
 {
@@ -17,8 +22,6 @@ namespace SMART_Monitor
         {
             InitializeComponent();
             System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = false;
-            tTimer = new Thread(new ThreadStart(this.timerThread));
-            tTimer.Start();
         }
 
         private void SMART_Monitor_Load(object sender, EventArgs e)
@@ -28,56 +31,10 @@ namespace SMART_Monitor
 
         private void button1_Click(object sender, EventArgs e)
         {
-            tTimer.Abort();
             this.Close();
         }
 
-        private void getNextUpdateTime()
-        {
-            if (rbUpdateInterval.Checked)
-            {
-                switch (cbIntervalUnit.SelectedIndex)
-                {
-                    case 0:
-                        dtNextUpdate = DateTime.Now.AddHours(Convert.ToDouble(nudInterval.Value));
-                        break;
-                    case 1:
-                        dtNextUpdate = DateTime.Now.AddMinutes(Convert.ToDouble(nudInterval.Value));
-                        break;
-                    case 2:
-                        dtNextUpdate = DateTime.Now.AddSeconds(Convert.ToDouble(nudInterval.Value));
-                        break;
-                }
-                return;
-            }
-            if (rbUpdateSchedule.Checked)
-            {
-                //update later
-                return;
-            }
-            if (rbUpdateManually.Checked)
-            {
-                dtNextUpdate = new DateTime(0);
-            }
-        }
-        private void timerThread()
-        {
-            while (true)
-            {
-                DateTime execTime = DateTime.Now;
-                this.Text = nudInterval.Value.ToString();
-                if (dtNextUpdate.Ticks == 0)
-                {
-                    
-                }
-                else
-                {
-                    
-                }
-                //wait 1 sec
-                Thread.Sleep(execTime.AddSeconds(1.0) - DateTime.Now);
-            }
-        }
+        
         private void UpdateSMARTInfo()
         {
             dDrives.Clear(); // reset data
@@ -232,8 +189,7 @@ namespace SMART_Monitor
         }
         #region (Local Variables)
         private Dictionary<int,HDD> dDrives = new Dictionary <int,HDD>();
-        DateTime dtNextUpdate = new DateTime();
-        Thread tTimer;
+        
         #endregion
 
         private void button2_Click(object sender, EventArgs e)
@@ -266,6 +222,138 @@ namespace SMART_Monitor
         private void rbUpdateManually_CheckedChanged(object sender, EventArgs e)
         {
             CheckedChanged();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+	            var connectionString = "mongodb://localhost";
+	            var client = new MongoClient (connectionString);
+	            var server = client.GetServer();
+	            var database = server.GetDatabase("test");
+	            if (database.CollectionExists("SMART") == false)
+	            {
+	                database.CreateCollection("SMART");
+	            }
+	            var collection = database.GetCollection("SMART");
+                foreach (var drive in dDrives)
+                {
+                    if (drive.Value.Serial.Length < 2) continue;
+                    BsonDocument bsonHDD = new BsonDocument();
+                    BsonArray SmartData = new BsonArray();
+                    foreach (var attr in drive.Value.Attributes)
+                    {
+                        if (attr.Value.HasData == false) continue;
+                        BsonDocument bsonSmart = new BsonDocument();
+                        bsonSmart.Add("ID", attr.Value.ID);
+                        bsonSmart.Add("Attribute", attr.Value.Attribute);
+                        bsonSmart.Add("Current", attr.Value.Current);
+                        bsonSmart.Add("Worst", attr.Value.Worst);
+                        bsonSmart.Add("Threshold", attr.Value.Threshold);
+                        bsonSmart.Add("Data", attr.Value.Data);
+                        bsonSmart.Add("IsOK", attr.Value.IsOK);
+                        SmartData.Add(bsonSmart);
+                    }
+                    bsonHDD.Add("Serial", drive.Value.Serial);
+                    bsonHDD.Add("TimeGet", new BsonDateTime(DateTime.Now));
+                    bsonHDD.Add("SmartData", SmartData);
+                    collection.Insert(bsonHDD);
+                }
+                MessageBox.Show("Done");
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var connectionString = "mongodb://localhost";
+                var client = new MongoClient(connectionString);
+                var server = client.GetServer();
+                var database = server.GetDatabase("test");
+                if (database.CollectionExists("SMART") == false)
+                {
+                    GetBtn.Text = "0";
+                    return;
+                }
+                var collection = database.GetCollection("SMART");
+                GetBtn.Text = collection.Count().ToString();
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var connectionString = "mongodb://localhost";
+                var client = new MongoClient(connectionString);
+                var server = client.GetServer();
+                var database = server.GetDatabase("test");
+                if (database.CollectionExists("SMART") == false)
+                {
+                    return;
+                }
+                if (GetBtn.Text == "Get")
+                {
+                    MessageBox.Show("Press Get button first!!!");
+                    return;
+                }
+                if (GetBtn.Text == "0")
+                {
+                    MessageBox.Show("No record to view");
+                    return;
+                }
+
+                int iRecordNo;
+                int iIndex;
+                try
+                {
+                    iRecordNo = Int32.Parse(GetBtn.Text);
+                    iIndex = Int32.Parse(tbRecordNumber.Text);
+                    if (iIndex >= iRecordNo)
+                    {
+                        MessageBox.Show("Index out of bound");
+                        return;
+                    }
+                }
+                catch
+                {
+                    return;
+                }
+                var collection = database.GetCollection("SMART");
+                var cursor = collection.FindAll();
+                var bsondoc = cursor.ElementAt(iIndex);
+                lSmartView.Text = "Serial : ";
+                lSmartView.Text += bsondoc["Serial"].AsString;
+                lSmartView.Text += "\r\nTime get : ";
+                lSmartView.Text += bsondoc["TimeGet"].ToUniversalTime().ToString("yyyy/MM/dd hh:mm:ss");
+
+                dgvSmartView.Rows.Clear();
+                foreach (var bsonsmart in bsondoc["SmartData"].AsBsonArray)
+                {
+                    dgvSmartView.Rows.Add(bsonsmart["ID"].AsInt32.ToString(),
+                        bsonsmart["Attribute"].AsString,
+                        bsonsmart["Current"].AsInt32.ToString(),
+                        bsonsmart["Worst"].AsInt32.ToString(),
+                        bsonsmart["Threshold"].AsInt32.ToString(),
+                        bsonsmart["Data"].AsInt32.ToString(),
+                        bsonsmart["IsOK"].AsBoolean ? "OK" : "Not OK");
+                }
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
