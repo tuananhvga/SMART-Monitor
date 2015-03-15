@@ -1,0 +1,10 @@
+D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe
+D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.pdb
+D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\obj\x86\Debug\SMARTService.ProjectInstaller.resources
+D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\obj\x86\Debug\SMARTService.SMARTService.resources
+D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\obj\x86\Debug\SMARTService.csproj.GenerateResource.Cache
+D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\obj\x86\Debug\SMARTService.exe
+D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\obj\x86\Debug\SMARTService.pdb
+D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\obj\x86\Debug\SMARTService.csprojResolveAssemblyReference.cache
+D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMART.dll
+D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMART.pdb
