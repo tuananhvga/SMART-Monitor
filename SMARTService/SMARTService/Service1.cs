@@ -32,9 +32,11 @@ namespace SMARTService
             eventLog1.Source = "MySource";
             eventLog1.Log = "MyNewLog";
             System.Timers.Timer GetInfoTimer = new System.Timers.Timer();
-            GetInfoTimer.Interval = 6000; // 60 seconds
+            GetInfoTimer.Interval = 6000; // 6 seconds
             GetInfoTimer.Elapsed += new System.Timers.ElapsedEventHandler(this.OnTimer);
             GetInfoTimer.Start();
+            SMART.Monitor.GetInfo();
+            SMART.Monitor.ToSQL();
         }
 
         protected override void OnStop()
@@ -44,9 +46,9 @@ namespace SMARTService
         public void OnTimer(object sender, System.Timers.ElapsedEventArgs args)
         {
             // TODO: Insert monitoring activities here.
-            EventLog.WriteEntry("OnTimer");
-            SMART.Monitor.GetInfo();
-            SMART.Monitor.ToSQL();
+            //EventLog.WriteEntry("OnTimer");
+            //SMART.Monitor.GetInfo();
+            //SMART.Monitor.ToSQL();
         }
 
     }

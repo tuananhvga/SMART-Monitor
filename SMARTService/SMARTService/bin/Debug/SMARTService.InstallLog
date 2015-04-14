@@ -479,3 +479,120 @@ Affected parameters are:
    logtoconsole = 
    logfile = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.InstallLog
    assemblypath = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe
+Installing assembly 'D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.InstallLog
+   assemblypath = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe
+Installing service SMART Monitor...
+Creating EventLog source SMART Monitor in log Application...
+Rolling back assembly 'D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.InstallLog
+   assemblypath = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe
+Restoring event log to previous state for source SMART Monitor.
+Installing assembly 'D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.InstallLog
+   assemblypath = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe
+Installing service SMART Monitor...
+Creating EventLog source SMART Monitor in log Application...
+Rolling back assembly 'D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.InstallLog
+   assemblypath = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe
+Restoring event log to previous state for source SMART Monitor.
+Uninstalling assembly 'D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.InstallLog
+   assemblypath = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe
+Removing EventLog source SMART Monitor.
+Service SMART Monitor is being removed from the system...
+Service SMART Monitor was successfully removed from the system.
+Attempt to stop service SMART Monitor.
+Installing assembly 'D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.InstallLog
+   assemblypath = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe
+Installing service SMART Monitor...
+Service SMART Monitor has been successfully installed.
+Creating EventLog source SMART Monitor in log Application...
+Committing assembly 'D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.InstallLog
+   assemblypath = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe
+Installing assembly 'D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.InstallLog
+   assemblypath = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe
+Installing service SMART Monitor...
+Service SMART Monitor has been successfully installed.
+Creating EventLog source SMART Monitor in log Application...
+Committing assembly 'D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.InstallLog
+   assemblypath = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe
+Installing assembly 'D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.InstallLog
+   assemblypath = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe
+Installing service SMART Monitor...
+Creating EventLog source SMART Monitor in log Application...
+Rolling back assembly 'D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.InstallLog
+   assemblypath = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe
+Restoring event log to previous state for source SMART Monitor.
+Uninstalling assembly 'D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.InstallLog
+   assemblypath = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe
+Removing EventLog source SMART Monitor.
+Service SMART Monitor is being removed from the system...
+Service SMART Monitor was successfully removed from the system.
+Installing assembly 'D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.InstallLog
+   assemblypath = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe
+Installing service SMART Monitor...
+Service SMART Monitor has been successfully installed.
+Creating EventLog source SMART Monitor in log Application...
+Committing assembly 'D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.InstallLog
+   assemblypath = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe
+Uninstalling assembly 'D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.InstallLog
+   assemblypath = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe
+Removing EventLog source SMART Monitor.
+Service SMART Monitor is being removed from the system...
+Service SMART Monitor was successfully removed from the system.
+Attempt to stop service SMART Monitor.
+Installing assembly 'D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.InstallLog
+   assemblypath = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe
+Installing service SMART Monitor...
+Service SMART Monitor has been successfully installed.
+Creating EventLog source SMART Monitor in log Application...
+Committing assembly 'D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.InstallLog
+   assemblypath = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe

@@ -17,9 +17,13 @@ namespace SMART
             return dDrives[0].Attributes[0xE7].Data;
         }
 
+        public static Dictionary<int, HDD> getDrives()
+        {
+            return dDrives;
+        }
         public static HDD getHDD(int index)
         {
-            if (index > dDrives.Count) return null;
+            if (index >= dDrives.Count) return null;
             return dDrives[index];
         }
         public static void GetInfo()
@@ -156,6 +160,7 @@ namespace SMART
                 cmd.Parameters.AddWithValue("@RecordID", null);
                 foreach (var attr in temp.Attributes)
                 {
+                    if (!attr.Value.HasData) continue;
                     cmd.Parameters["@ID"].Value = attr.Value.ID;
                     cmd.Parameters["@Current"].Value = attr.Value.Current;
                     cmd.Parameters["@Worst"].Value = attr.Value.Worst;
@@ -169,6 +174,66 @@ namespace SMART
                 //Console.WriteLine("String {0}", connectionstring);
                 conn.Close();
             }
+        }
+
+        // take most recent data from sqlserver
+        public static string FromSQL()
+        {
+            string connectionstring = "Data Source=VGA-PC\\SQLEXPRESS;"
+        + "Integrated Security=SSPI;Initial Catalog=SMARTMonitor";
+            string retval = null;
+            using (SqlConnection conn = new SqlConnection(connectionstring))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("Select top 1 * from RecordInfo order by RecordedTime DESC");
+                int RecordID = 0;
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = conn;
+
+                HDD temp = new HDD();
+                dDrives.Clear();
+                dDrives.Add(0,temp);// write to the first one
+                try
+                {
+                	SqlDataReader myReader = null;
+	                myReader = cmd.ExecuteReader();
+	                while (myReader.Read())
+	                {
+	                    //extract recordid, if can't return null
+                        int.TryParse(myReader["RecordID"].ToString(),out RecordID);
+                        temp.Type = myReader["Type"].ToString();
+                        temp.Serial = myReader["Serial"].ToString();
+                        temp.Model = myReader["Model"].ToString();
+                        temp.IsOK = myReader["DeviceOK"].ToString().Equals("True");
+                        retval = myReader["RecordedTime"].ToString();
+	                }
+                    cmd.CommandText = "Select * from RecordData where RecordID = " + RecordID.ToString();
+                    myReader.Close();
+                    myReader = cmd.ExecuteReader();
+                    while (myReader.Read())
+                    {
+                        int id = 0;
+                        int itemp = 0;
+                        int.TryParse(myReader["ID"].ToString(), out id);
+                        temp.Attributes[id].ID = id;
+                        int.TryParse(myReader[1].ToString(), out itemp);
+                        temp.Attributes[id].Current = itemp;
+                        int.TryParse(myReader["Worst"].ToString(), out itemp);
+                        temp.Attributes[id].Worst = itemp;
+                        int.TryParse(myReader["Threshold"].ToString(), out itemp);
+                        temp.Attributes[id].Threshold = itemp;
+                        int.TryParse(myReader["Data"].ToString(), out itemp);
+                        temp.Attributes[id].Data = itemp;
+                        temp.Attributes[id].IsOK = myReader["IsOK"].ToString().Equals("True");
+                    }
+                }
+                catch (System.Exception ex)
+                {
+                    return ex.ToString();
+                }
+                conn.Close();
+            }
+            return retval;
         }
     }
 }
