@@ -21,10 +21,11 @@ namespace SMART_Monitor
 
         private void SMART_Monitor_Load(object sender, EventArgs e)
         {
-            
+
+            //this.reportViewer1.RefreshReport();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -74,7 +75,7 @@ namespace SMART_Monitor
         
         #endregion
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
             SMART.Monitor.GetInfo();
             try
@@ -199,9 +200,14 @@ namespace SMART_Monitor
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void btnLoadMostRecent_Click(object sender, EventArgs e)
         {
             LoadData();
+        }
+
+        private void btnApply_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

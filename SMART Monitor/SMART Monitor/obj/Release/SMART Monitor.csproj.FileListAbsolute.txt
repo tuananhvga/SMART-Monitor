@@ -7,6 +7,5 @@ D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor\obj\Release\SMART Mon
 D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor\obj\Release\SMART Monitor.pdb
 D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor\bin\Release\SMART.dll
 D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor\bin\Release\SMART.pdb
-D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor\obj\Release\ResolveAssemblyReference.cache
-D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor\obj\Release\ResGen.read.1.tlog
-D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor\obj\Release\ResGen.write.1.tlog
+D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor\obj\Release\SMART Monitor.csprojResolveAssemblyReference.cache
+D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor\obj\Release\SMART Monitor.csproj.GenerateResource.Cache
