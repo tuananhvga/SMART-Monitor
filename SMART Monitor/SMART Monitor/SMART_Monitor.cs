@@ -94,7 +94,14 @@ namespace SMART_Monitor
 
             }
             ShowInfo();
-            SMART.Monitor.ToSQL();
+            try
+            {
+            	SMART.Monitor.ToSQL();
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show("Couldn't connect to the server. \r\nError : " + ex.Message);
+            }
         }
 
         private void cbDrives_SelectedIndexChanged(object sender, EventArgs e)
@@ -173,12 +180,21 @@ namespace SMART_Monitor
 
         private void LoadData()
         {
-            string recordedtime = SMART.Monitor.FromSQL();
-            var HDDtemp = SMART.Monitor.getHDD(0);
-            lSmartView.Text = "Serial : ";
-            lSmartView.Text += HDDtemp.Serial.ToString();
-            lSmartView.Text += "\r\nTime get : ";
-            lSmartView.Text += recordedtime;
+            SMART.HDD HDDtemp;
+            try
+            {
+	            string recordedtime = SMART.Monitor.FromSQL();
+	            HDDtemp = SMART.Monitor.getHDD(0);
+	            lSmartView.Text = "Serial : ";
+	            lSmartView.Text += HDDtemp.Serial.ToString();
+	            lSmartView.Text += "\r\nTime get : ";
+	            lSmartView.Text += recordedtime;
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show("Failed to load data. \r\nError : " + ex.Message);
+                return;
+            }
 
             //to DGV
             try

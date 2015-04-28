@@ -1,5 +1,5 @@
 D:\Setup\lap trinh\Projects\C#\SMART\SMART\bin\Debug\SMART.dll
 D:\Setup\lap trinh\Projects\C#\SMART\SMART\bin\Debug\SMART.pdb
-D:\Setup\lap trinh\Projects\C#\SMART\SMART\obj\Debug\ResolveAssemblyReference.cache
+D:\Setup\lap trinh\Projects\C#\SMART\SMART\obj\Debug\SMART.csprojResolveAssemblyReference.cache
 D:\Setup\lap trinh\Projects\C#\SMART\SMART\obj\Debug\SMART.dll
 D:\Setup\lap trinh\Projects\C#\SMART\SMART\obj\Debug\SMART.pdb

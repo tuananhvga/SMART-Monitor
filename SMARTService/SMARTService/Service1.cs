@@ -21,7 +21,10 @@ namespace SMARTService
 
         protected override void OnStart(string[] args)
         {
-            //EventLog.WriteEntry("Coin card");
+            string FileName = "smart.log";
+            StreamWriter f = new StreamWriter(FileName, true);
+            f.WriteLine("chay onstart day");
+            f.Close();
             this.AutoLog = false;
             eventLog1 = new System.Diagnostics.EventLog();
             if (!System.Diagnostics.EventLog.SourceExists("MySource"))
@@ -36,7 +39,14 @@ namespace SMARTService
             GetInfoTimer.Elapsed += new System.Timers.ElapsedEventHandler(this.OnTimer);
             GetInfoTimer.Start();
             SMART.Monitor.GetInfo();
-            SMART.Monitor.ToSQL();
+            try
+            {
+                SMART.Monitor.ToSQL();
+            }
+            catch (Exception e)
+            {
+                eventLog1.WriteEntry("Hello: " + e.Message);
+            }
         }
 
         protected override void OnStop()
