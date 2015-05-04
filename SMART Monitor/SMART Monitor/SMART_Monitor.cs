@@ -9,6 +9,7 @@ using System.Threading;
 using System.Text;
 using System.Windows.Forms;
 using SMART;
+using System.ServiceProcess;
 namespace SMART_Monitor
 {
     public partial class SMART_Monitor : Form
@@ -117,7 +118,6 @@ namespace SMART_Monitor
         private void CheckedChanged()
         {
             nudInterval.Enabled = cbIntervalUnit.Enabled = rbUpdateInterval.Checked;
-            cbScheduleUnit.Enabled = mtbScheduleTime.Enabled = rbUpdateSchedule.Checked;
         }
 
         private void rbUpdateInterval_CheckedChanged(object sender, EventArgs e)
@@ -223,7 +223,59 @@ namespace SMART_Monitor
 
         private void btnApply_Click(object sender, EventArgs e)
         {
+            Microsoft.Win32.RegistryKey key;
+            key = Microsoft.Win32.Registry.CurrentUser.CreateSubKey("SMARTMonitor");
+            if (rbUpdateManually.Checked)
+            {
+                key.SetValue("Manually", 1);
+            }
+            else
+            {
+                key.SetValue("Manually", 0);
+                switch (cbIntervalUnit.SelectedIndex)
+                {
+                    case 0:
+                        //hours
+                        key.SetValue("Interval", 1000 * 3600 * nudInterval.Value);
+                        break;
+                    case 1:
+                        //mins
+                        key.SetValue("Interval", 1000 * 60 * nudInterval.Value);
+                        break;
+                    case 2:
+                        //seconds
+                        key.SetValue("Interval", 1000 * nudInterval.Value);
+                        break;
+                }
+            }
+            key.Close();
 
+            //restart the service
+            ServiceController service = new ServiceController("SMARTMonitorServ");
+            
+            try
+            {
+                TimeSpan timeout = TimeSpan.MaxValue;
+                if (service.Status == ServiceControllerStatus.Stopped)
+                {
+                    //run the service if isn't running
+                    service.Start();
+                    service.WaitForStatus(ServiceControllerStatus.Running, timeout);
+                }
+                else
+                {
+                    //restart the service
+                    service.Stop();
+                    service.WaitForStatus(ServiceControllerStatus.Stopped, timeout);
+
+                    service.Start();
+                    service.WaitForStatus(ServiceControllerStatus.Running, timeout);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Exception : " + ex.Message);
+            }
         }
     }
 }

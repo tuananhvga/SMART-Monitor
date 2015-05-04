@@ -54,13 +54,9 @@ namespace SMART_Monitor
             this.btnLoadMostRecent = new System.Windows.Forms.Button();
             this.btnApply = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.mtbScheduleTime = new System.Windows.Forms.MaskedTextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cbScheduleUnit = new System.Windows.Forms.ComboBox();
             this.nudInterval = new System.Windows.Forms.NumericUpDown();
             this.cbIntervalUnit = new System.Windows.Forms.ComboBox();
             this.rbUpdateManually = new System.Windows.Forms.RadioButton();
-            this.rbUpdateSchedule = new System.Windows.Forms.RadioButton();
             this.rbUpdateInterval = new System.Windows.Forms.RadioButton();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
@@ -193,9 +189,9 @@ namespace SMART_Monitor
             this.groupBox2.Controls.Add(this.lSmartView);
             this.groupBox2.Controls.Add(this.dgvSmartView);
             this.groupBox2.Controls.Add(this.btnLoadMostRecent);
-            this.groupBox2.Location = new System.Drawing.Point(6, 101);
+            this.groupBox2.Location = new System.Drawing.Point(6, 70);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(539, 202);
+            this.groupBox2.Size = new System.Drawing.Size(539, 233);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Logging";
@@ -207,7 +203,7 @@ namespace SMART_Monitor
             this.lSmartView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lSmartView.Location = new System.Drawing.Point(421, 48);
             this.lSmartView.Name = "lSmartView";
-            this.lSmartView.Size = new System.Drawing.Size(118, 148);
+            this.lSmartView.Size = new System.Drawing.Size(118, 179);
             this.lSmartView.TabIndex = 9;
             this.lSmartView.Text = "None";
             // 
@@ -232,7 +228,7 @@ namespace SMART_Monitor
             this.dgvSmartView.Name = "dgvSmartView";
             this.dgvSmartView.ReadOnly = true;
             this.dgvSmartView.RowHeadersVisible = false;
-            this.dgvSmartView.Size = new System.Drawing.Size(412, 148);
+            this.dgvSmartView.Size = new System.Drawing.Size(412, 179);
             this.dgvSmartView.TabIndex = 8;
             // 
             // dataGridViewTextBoxColumn1
@@ -304,53 +300,16 @@ namespace SMART_Monitor
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.mtbScheduleTime);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.cbScheduleUnit);
             this.groupBox1.Controls.Add(this.nudInterval);
             this.groupBox1.Controls.Add(this.cbIntervalUnit);
             this.groupBox1.Controls.Add(this.rbUpdateManually);
-            this.groupBox1.Controls.Add(this.rbUpdateSchedule);
             this.groupBox1.Controls.Add(this.rbUpdateInterval);
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(283, 89);
+            this.groupBox1.Size = new System.Drawing.Size(283, 64);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Update Options";
-            // 
-            // mtbScheduleTime
-            // 
-            this.mtbScheduleTime.Enabled = false;
-            this.mtbScheduleTime.Location = new System.Drawing.Point(169, 39);
-            this.mtbScheduleTime.Mask = "00:00";
-            this.mtbScheduleTime.Name = "mtbScheduleTime";
-            this.mtbScheduleTime.Size = new System.Drawing.Size(104, 20);
-            this.mtbScheduleTime.TabIndex = 1;
-            this.mtbScheduleTime.ValidatingType = typeof(System.DateTime);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(144, 43);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(17, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "At";
-            // 
-            // cbScheduleUnit
-            // 
-            this.cbScheduleUnit.Enabled = false;
-            this.cbScheduleUnit.FormattingEnabled = true;
-            this.cbScheduleUnit.Items.AddRange(new object[] {
-            "Yearly",
-            "Monthly",
-            "Daily"});
-            this.cbScheduleUnit.Location = new System.Drawing.Point(69, 39);
-            this.cbScheduleUnit.Name = "cbScheduleUnit";
-            this.cbScheduleUnit.Size = new System.Drawing.Size(69, 21);
-            this.cbScheduleUnit.TabIndex = 5;
-            this.cbScheduleUnit.Text = "Daily";
             // 
             // nudInterval
             // 
@@ -385,24 +344,13 @@ namespace SMART_Monitor
             // rbUpdateManually
             // 
             this.rbUpdateManually.AutoSize = true;
-            this.rbUpdateManually.Location = new System.Drawing.Point(6, 64);
+            this.rbUpdateManually.Location = new System.Drawing.Point(6, 41);
             this.rbUpdateManually.Name = "rbUpdateManually";
             this.rbUpdateManually.Size = new System.Drawing.Size(105, 17);
             this.rbUpdateManually.TabIndex = 2;
             this.rbUpdateManually.Text = "Update Manually";
             this.rbUpdateManually.UseVisualStyleBackColor = true;
             this.rbUpdateManually.CheckedChanged += new System.EventHandler(this.rbUpdateManually_CheckedChanged);
-            // 
-            // rbUpdateSchedule
-            // 
-            this.rbUpdateSchedule.AutoSize = true;
-            this.rbUpdateSchedule.Location = new System.Drawing.Point(6, 41);
-            this.rbUpdateSchedule.Name = "rbUpdateSchedule";
-            this.rbUpdateSchedule.Size = new System.Drawing.Size(60, 17);
-            this.rbUpdateSchedule.TabIndex = 1;
-            this.rbUpdateSchedule.Text = "Update";
-            this.rbUpdateSchedule.UseVisualStyleBackColor = true;
-            this.rbUpdateSchedule.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // rbUpdateInterval
             // 
@@ -559,13 +507,9 @@ namespace SMART_Monitor
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbUpdateManually;
-        private System.Windows.Forms.RadioButton rbUpdateSchedule;
         private System.Windows.Forms.RadioButton rbUpdateInterval;
         private System.Windows.Forms.ComboBox cbIntervalUnit;
         private System.Windows.Forms.NumericUpDown nudInterval;
-        private System.Windows.Forms.ComboBox cbScheduleUnit;
-        private System.Windows.Forms.MaskedTextBox mtbScheduleTime;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnApply;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnLoadMostRecent;

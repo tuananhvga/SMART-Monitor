@@ -1,0 +1,10 @@
+D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor Service\bin\Release\SMART Monitor Service.exe
+D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor Service\bin\Release\SMART Monitor Service.pdb
+D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor Service\bin\Release\SMART.dll
+D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor Service\bin\Release\SMART.pdb
+D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor Service\obj\x86\Release\SMART Monitor Service.csprojResolveAssemblyReference.cache
+D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor Service\obj\x86\Release\SMART_Monitor_Service.ProjectInstaller.resources
+D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor Service\obj\x86\Release\SMART_Monitor_Service.SMARTMonitorServ.resources
+D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor Service\obj\x86\Release\SMART Monitor Service.csproj.GenerateResource.Cache
+D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor Service\obj\x86\Release\SMART Monitor Service.exe
+D:\Setup\lap trinh\Projects\C#\SMART Monitor\SMART Monitor Service\obj\x86\Release\SMART Monitor Service.pdb

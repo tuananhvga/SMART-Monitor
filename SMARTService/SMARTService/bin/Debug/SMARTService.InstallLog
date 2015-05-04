@@ -1,9 +1,0 @@
-﻿Uninstalling assembly 'D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe'.
-Affected parameters are:
-   logtoconsole = 
-   logfile = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.InstallLog
-   assemblypath = D:\Setup\lap trinh\Projects\C#\SMARTService\SMARTService\bin\Debug\SMARTService.exe
-Removing EventLog source SMART Monitor.
-Service SMART Monitor is being removed from the system...
-Service SMART Monitor was successfully removed from the system.
-Attempt to stop service SMART Monitor.
